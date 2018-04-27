@@ -1,0 +1,28 @@
+.footer {
+    margin: 8rem 0 0 0;
+    padding: 3rem 0;
+    // border-top: .4rem solid $main-color;
+    background-image: linear-gradient($main-color, $main-color);
+	background-position: 50% 0;
+	background-size: 50% .4rem;
+	background-repeat: no-repeat;
+    text-align: center;
+}
+.footer__logo {
+    margin: 0;
+    img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.footer__copy {
+    margin: 2rem 0 0 0;
+}
+.footer_author {
+    margin: 2rem 0 0 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}

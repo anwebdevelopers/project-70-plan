@@ -85,20 +85,50 @@ a {
 	line-height: 1;
 	font-weight: 700;
 	letter-spacing: .05em;
-	background-image: linear-gradient($main-color, $main-color);
-	background-position: 0 100%;
-	background-size: 100% 45%;
-	background-repeat: no-repeat;
-	transition: all .5s ease;
+	// background-image: linear-gradient($main-color, $main-color);
+	// background-position: 0 100%;
+	// background-size: 100% 1rem;
+	// background-repeat: no-repeat;
+	// transition: all .5s ease;
 	&:hover, &:active {
-		background-size: 100% 100%;
+		//background-size: 100% 100%;
+		&:before {
+			height: 100%;
+		}
+	}
+	position: relative;
+	z-index: 1;
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: 1rem;
+		background-color: $main-color;
+		transition: all .5s ease;
 	}
 }
-
+[data-scrollax-parent] {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+[data-scrollax] {
+	position:absolute;
+	z-index:-1;
+}
 //Custom Styles Here
 @import "components/header.scss";
 @import "components/about.scss";
 @import "components/galleries.scss";
+@import "components/kinds.scss";
+@import "components/footer.scss";
 //@import "build/scss/components/magnific-popup.scss";
 
 //ALWAYS END
@@ -106,7 +136,7 @@ a {
 
 //Load Libs SASS
 //@import "html/libs/animate/animate.sass";
-//@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
+@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
@@ -122,7 +152,9 @@ a {
 }
 
 @media only screen and (max-width : 768px) {
-
+	[data-scrollax-parent] {
+		display: none;
+	}
 }
 
 @media only screen and (max-width : 640px) {

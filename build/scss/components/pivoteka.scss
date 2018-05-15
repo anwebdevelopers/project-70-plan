@@ -1,0 +1,16 @@
+.pivoteka {
+    margin: 8rem 0 0 0;
+}
+.pivoteka__box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pivoteka__main {
+    flex: 0 0 auto;
+    width: 60%;
+}
+.pivoteka__aside {
+    flex: 0 0 auto;
+    width: 35%;
+    margin-left: 5%;
+}

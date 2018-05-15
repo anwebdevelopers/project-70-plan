@@ -38,4 +38,74 @@ $(function() {
     /***********************************************************/
     $.Scrollax();
 
+    /*******************************************************/
+    //ACCORDION
+    /*******************************************************/
+     $('.accordion').each(function() {
+        var $this = $(this);
+        $this.children('.accordion__box').hide();
+    }).on('click', '.accordion__title', function(e) {
+        e.stopPropagation();
+        var $this = $(this);
+        $this.closest('.accordion').hasClass('active') ? $this.closest('.accordion').removeClass('active').children('.accordion__box').slideUp(200) : $this.closest('.accordion').addClass('active').children('.accordion__box').slideDown(200).end().siblings().removeClass('active').children('.accordion__box').slideUp(200);
+    });
+
+    //---------------------------------------------------
+    //Яндекс карта
+    //---------------------------------------------------
+    if(typeof ymaps === 'object') {
+        ymaps.ready(function() {
+            var myMap;
+            myMap = new ymaps.Map('map', {
+                    center: [57.631844, 39.869668],
+                    zoom: 14,
+                    controls: [],
+                    behaviors: ['drag', 'dblClickZoom', 'rightMouseButtonMagnifier', 'multiTouch']
+                }, {
+                    searchControlProvider: 'yandex#search'
+                }),
+            myMap.controls.add('zoomControl', {
+                size: 'small',
+                position: {
+                    top: 'auto',
+                    left: 10,
+                    bottom: 50
+                }
+            }),
+            myMap.geoObjects.add(new ymaps.Placemark([57.631844, 39.869668], {
+                hintContent: '',
+                balloonContent: ''
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/icon-map.svg',
+                iconImageSize: [34, 48],
+                iconImageOffset: [-17, -48]
+            }));
+            function disableDrag() {
+                var w = $(window).width();
+                w <= 992 ? myMap.behaviors.disable('drag') : myMap.behaviors.enable('drag');
+            }
+            disableDrag();
+            $(window).resize(disableDrag);
+        });
+    }
+
+    //-------------------------------
+    //Projects Gallery
+    //-------------------------------
+    $('.brewery__gallery-thumbs').on('click', '.brewery__gallery-thumbs-item:not(.active)', function() {
+        var imgPath = $(this).children('img').attr('src');
+        var oldImage = $(this).closest('.brewery__gallery').find('.brewery__gallery-img img');
+        var newImage = $('<img src="' + imgPath + '">');
+        newImage.hide();
+        $(this).closest('.brewery__gallery').find('.brewery__gallery-img').append(newImage);
+        newImage.fadeIn(600);
+        oldImage.fadeOut(600, function() {
+            $(this).remove();
+        });
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+    $('.brewery__gallery').find('.brewery__gallery-thumbs-item:first').click();
+
+    //var simpleBar = new SimpleBar(document.getElementById('placeList'));
 });

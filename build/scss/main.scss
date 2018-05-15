@@ -128,7 +128,11 @@ a {
 @import "components/about.scss";
 @import "components/galleries.scss";
 @import "components/kinds.scss";
+@import "components/place.scss";
+@import "components/brewery.scss";
+@import "components/pivoteka.scss";
 @import "components/footer.scss";
+
 //@import "build/scss/components/magnific-popup.scss";
 
 //ALWAYS END
@@ -136,7 +140,9 @@ a {
 
 //Load Libs SASS
 //@import "html/libs/animate/animate.sass";
-@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
+@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.scss";
+@import "html/libs/simplebar/simplebar.scss";
+
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";

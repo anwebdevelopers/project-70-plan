@@ -73,6 +73,8 @@ gulp.task('scripts', function() {
             //'./html/libs/plugins-scroll/plugins-scroll.js',
             './html/libs/OwlCarousel2-2.2.1/dist/owl.carousel.min.js',
             './html/libs/Scrollax.js/scrollax.min.js',
+            //'./html/libs/simplebar/simplebar.js',
+
             //'./html/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.min.js',
             //'./html/libs/velocity/velocity.min.js',
             //'./html/libs/velocity/velocity.ui.min.js',

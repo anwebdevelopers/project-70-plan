@@ -3,12 +3,47 @@
     padding: 2rem 0 3rem 0;
     color: #fff;
 
-    min-height: 100vh;
-    display: flex;
-    z-index: 1;
+
+    &.header_home {
+        min-height: 100vh;
+        display: flex;
+        z-index: 1;
+        .header__bg {
+            overflow: hidden;
+            img {
+                animation-name: scale;
+                animation-duration: 26s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(.25,0,.75,1);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 3rem;
+                background-image: url(../img/mask-header1.png);
+                background-size: auto 100%;
+                background-position: 50% 100%;
+                background-repeat: repeat-x;
+            }
+        }
+        .header__content {
+            padding: 0 10%;
+        }
+        .header__content-inner {
+            padding: 8rem 6% 11rem 6%;
+        }
+        .header__title {
+            padding-bottom: 0;
+            background: none;
+        }
+    }
 }
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-    .header {
+    .header.header_home {
         min-height: auto
     }
 }
@@ -37,15 +72,15 @@
     right: 0;
     bottom: 0;
     background-color: #211006;
-    overflow: hidden;
+    //overflow: hidden;
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        animation-name: scale;
-        animation-duration: 26s;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(.25,0,.75,1);
+        // animation-name: scale;
+        // animation-duration: 26s;
+        // animation-iteration-count: infinite;
+        // animation-timing-function: cubic-bezier(.25,0,.75,1);
     }
     &:before {
         content: '';
@@ -61,19 +96,7 @@
         background-position: center center;
         background-repeat: repeat;
     }
-    &:after {
-        content: '';
-        position: absolute;
-        z-index: 2;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 3rem;
-        background-image: url(../img/mask-header1.png);
-        background-size: auto 100%;
-        background-position: 50% 100%;
-        background-repeat: repeat-x;
-    }
+
 }
 .header__top {
     z-index: 1;
@@ -163,14 +186,14 @@
     flex: 0 0 auto;
     width: 100%;
     margin: auto 0;
-    padding: 0 10%;
+    // padding: 0 10%;
 
 }
 .header__content-inner {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    padding: 8rem 6% 11rem 6%;
+    padding: 8rem 0 11rem 0;
 }
 .header__img {
     margin: 0;
@@ -196,9 +219,14 @@
 }
 .header__title {
     margin: 1rem 0 0 0;
+    padding-bottom: 2rem;
     font-size: 7.2rem;
     font-weight: 900;
     line-height: 1.1;
+    background-image: linear-gradient($main-color, $main-color);
+	background-position: 0 100%;
+	background-size: 18rem .8rem;
+	background-repeat: no-repeat;
 }
 .header__subtitle {
     margin: 1rem 0 0 0;

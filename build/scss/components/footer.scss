@@ -1,10 +1,12 @@
 .footer {
-    margin: 8rem 0 0 0;
-    padding: 3rem 0;
+    margin: 4rem 0 0 0;
+    padding: 9rem 0 3rem 0;
+    //padding: 3rem 0;
     // border-top: .4rem solid $main-color;
-    background-image: linear-gradient($main-color, $main-color);
-	background-position: 50% 0;
-	background-size: 50% .4rem;
+    background-image: linear-gradient($main-color, $main-color),
+                        url(../img/bg-footer.png);
+	background-position: 50% 6rem, 100% 0;
+	background-size: 50% .4rem, auto auto;
 	background-repeat: no-repeat;
     text-align: center;
 }

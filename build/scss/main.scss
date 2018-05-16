@@ -78,7 +78,7 @@ a {
 	outline: none !important;
 }
 .link {
-	@include link;
+	@include btn;
 	padding: .3rem 2rem;
 	color: #383434;
 	font-size: 1.6rem;

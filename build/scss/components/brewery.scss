@@ -114,10 +114,11 @@
 }
 .brewery__gallery-thumbs-item {
     flex: 0 0 auto;
-    width: calc(33.3333% - 1.3333rem);
+    width: calc(33.3333% - 1.34rem);
     margin: 0;
     margin-right: 2rem;
     border: .4rem solid rgba(255,255,255,0);
+    border-radius: .3rem;
     transition: all .5s ease;
     &:nth-child(3n + 3) {
         margin-right: 0;
@@ -244,7 +245,7 @@
 
 @media only screen and (max-width : 640px) {
     .brewery__gallery-thumbs-item {
-        width: calc(33.3333% - .6666rem);
+        width: calc(33.3333% - .7rem);
         margin-right: 1rem;
         margin-bottom: 1rem;
     }
@@ -280,7 +281,7 @@
         margin-right: 10%;
     }
     .brewery__gallery-thumbs-item {
-        width: calc(33.3333% - 1.3333rem);
+        width: calc(33.3333% - 1.4rem);
         margin-right: 2rem;
         margin-bottom: 2rem;
     }
@@ -294,7 +295,7 @@
         margin-right: 0;
     }
     .brewery__gallery-thumbs-item {
-        width: calc(33.3333% - .6666rem);
+        width: calc(33.3333% - .7rem);
         margin-right: 1rem;
         margin-bottom: 1rem;
     }

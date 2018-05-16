@@ -72,14 +72,15 @@
     font-style: italic;
 
     display: flex;
+    //align-items: flex-start;
     flex-wrap: wrap;
     &:before {
         content: '';
         flex: 1 1 auto;
-        align-self: center;
+        //align-self: center;
         min-width: 3rem;
         height: .3rem;
-        margin: 0 2rem 0 0;
+        margin: .8rem 2rem 0 0;
         background-color: $main-color;
     }
 }

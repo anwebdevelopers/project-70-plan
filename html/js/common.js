@@ -5,7 +5,7 @@ $(function() {
     /*******************************************************/
     //CAROUSEL
     /*******************************************************/
-    $('.kinds__box').addClass('owl-carousel').owlCarousel({
+    $('.kinds-slider').addClass('owl-carousel').owlCarousel({
         loop: true,
         items: 4,
         nav: true,
@@ -33,9 +33,9 @@ $(function() {
         }
     });
 
-    /***********************************************************/
+    /*******************************************************/
     //Parallax Effect
-    /***********************************************************/
+    /*******************************************************/
     $.Scrollax();
 
     /*******************************************************/
@@ -50,9 +50,9 @@ $(function() {
         $this.closest('.accordion').hasClass('active') ? $this.closest('.accordion').removeClass('active').children('.accordion__box').slideUp(200) : $this.closest('.accordion').addClass('active').children('.accordion__box').slideDown(200).end().siblings().removeClass('active').children('.accordion__box').slideUp(200);
     });
 
-    //---------------------------------------------------
+    /*******************************************************/
     //Яндекс карта
-    //---------------------------------------------------
+    /*******************************************************/
     if(typeof ymaps === 'object') {
         ymaps.ready(function() {
             var myMap;
@@ -90,22 +90,36 @@ $(function() {
         });
     }
 
-    //-------------------------------
+    /*******************************************************/
     //Projects Gallery
-    //-------------------------------
-    $('.brewery__gallery-thumbs').on('click', '.brewery__gallery-thumbs-item:not(.active)', function() {
-        var imgPath = $(this).children('img').attr('src');
-        var oldImage = $(this).closest('.brewery__gallery').find('.brewery__gallery-img img');
-        var newImage = $('<img src="' + imgPath + '">');
-        newImage.hide();
-        $(this).closest('.brewery__gallery').find('.brewery__gallery-img').append(newImage);
-        newImage.fadeIn(600);
-        oldImage.fadeOut(600, function() {
-            $(this).remove();
-        });
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-    $('.brewery__gallery').find('.brewery__gallery-thumbs-item:first').click();
+    /*******************************************************/
 
+    $('.gallery').each(function() {
+        $(this).find('.gallery-thumbs').on('click', '.gallery-thumbs-item:not(.active)', function() {
+            var imgPath = $(this).children('img').attr('src');
+            var oldImage = $(this).closest('.gallery').find('.gallery-img img');
+            var newImage = $('<img src="' + imgPath + '">');
+            newImage.hide();
+            $(this).closest('.gallery').find('.gallery-img').append(newImage);
+            newImage.fadeIn(600);
+            oldImage.fadeOut(600, function() {
+                $(this).remove();
+            });
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+        $(this).find('.gallery-thumbs-item:first').click();
+    });
+
+    /*******************************************************/
+    //TABS
+    /*******************************************************/
+
+    $('.tabs').each(function() {
+        $(this).children('.tabs__item').not(':first').hide(),
+        $(this).children('.tabs__buttons').on('click', 'button:not(.active)', function() {
+            $(this).addClass('active').siblings().removeClass('active').closest('.tabs').children('.tabs__item').stop().slideUp(300).eq($(this).index()).stop().slideDown(300);
+        }).children('button').first().addClass('active');
+    });
+    
     //var simpleBar = new SimpleBar(document.getElementById('placeList'));
 });

@@ -265,7 +265,7 @@
 }
 
 @media only screen and (max-width : 768px) {
-    .header__content {
+    .header.header_home .header__content {
         padding: 0;
     }
     .header__title {

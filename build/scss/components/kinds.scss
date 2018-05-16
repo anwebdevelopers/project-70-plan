@@ -76,6 +76,32 @@
     display: flex;
     flex-wrap: wrap;
 }
+.kinds__tabs {
+    .kinds__box {
+        margin-top: 0;
+    }
+}
+.kinds__tabs-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    button {
+        @include btn;
+        flex: 0 1 auto;
+        margin-bottom: 2rem;
+        margin-right: 4rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Bebas Neue';
+        color: $main-color;
+        transition: all .5s ease;
+        &.active {
+            font-size: 3.2rem;
+            color: #383434;
+        }
+    }
+}
 .kinds__box /*, .slider, .content-gallery*/ {
     &.owl-carousel {
         display: block;
